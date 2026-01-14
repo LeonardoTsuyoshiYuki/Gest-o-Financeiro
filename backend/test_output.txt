@@ -1,0 +1,225 @@
+Creating test database for alias 'default'...
+F..Traceback (most recent call last):
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\invoices\tests_download.py", line 18, in setUp
+    self.user = User.objects.create_user(username='testuser', password='password')
+                ^^^^^^^^^^^^
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\venv\Lib\site-packages\django\db\models\manager.py", line 196, in __get__
+    raise AttributeError(
+    ...<5 lines>...
+    )
+AttributeError: Manager isn't available; 'auth.User' has been swapped for 'users.User'
+ETraceback (most recent call last):
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\invoices\tests_download.py", line 18, in setUp
+    self.user = User.objects.create_user(username='testuser', password='password')
+                ^^^^^^^^^^^^
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\venv\Lib\site-packages\django\db\models\manager.py", line 196, in __get__
+    raise AttributeError(
+    ...<5 lines>...
+    )
+AttributeError: Manager isn't available; 'auth.User' has been swapped for 'users.User'
+ETraceback (most recent call last):
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\invoices\tests_download.py", line 18, in setUp
+    self.user = User.objects.create_user(username='testuser', password='password')
+                ^^^^^^^^^^^^
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\venv\Lib\site-packages\django\db\models\manager.py", line 196, in __get__
+    raise AttributeError(
+    ...<5 lines>...
+    )
+AttributeError: Manager isn't available; 'auth.User' has been swapped for 'users.User'
+ETraceback (most recent call last):
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\invoices\tests_download.py", line 18, in setUp
+    self.user = User.objects.create_user(username='testuser', password='password')
+                ^^^^^^^^^^^^
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\venv\Lib\site-packages\django\db\models\manager.py", line 196, in __get__
+    raise AttributeError(
+    ...<5 lines>...
+    )
+AttributeError: Manager isn't available; 'auth.User' has been swapped for 'users.User'
+E.FFF..........EE
+======================================================================
+ERROR: test_download_missing_file (invoices.tests_download.InvoiceDownloadTests.test_download_missing_file)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\invoices\tests_download.py", line 18, in setUp
+    self.user = User.objects.create_user(username='testuser', password='password')
+                ^^^^^^^^^^^^
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\venv\Lib\site-packages\django\db\models\manager.py", line 196, in __get__
+    raise AttributeError(
+    ...<5 lines>...
+    )
+AttributeError: Manager isn't available; 'auth.User' has been swapped for 'users.User'
+
+======================================================================
+ERROR: test_download_not_found (invoices.tests_download.InvoiceDownloadTests.test_download_not_found)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\invoices\tests_download.py", line 18, in setUp
+    self.user = User.objects.create_user(username='testuser', password='password')
+                ^^^^^^^^^^^^
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\venv\Lib\site-packages\django\db\models\manager.py", line 196, in __get__
+    raise AttributeError(
+    ...<5 lines>...
+    )
+AttributeError: Manager isn't available; 'auth.User' has been swapped for 'users.User'
+
+======================================================================
+ERROR: test_download_success (invoices.tests_download.InvoiceDownloadTests.test_download_success)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\invoices\tests_download.py", line 18, in setUp
+    self.user = User.objects.create_user(username='testuser', password='password')
+                ^^^^^^^^^^^^
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\venv\Lib\site-packages\django\db\models\manager.py", line 196, in __get__
+    raise AttributeError(
+    ...<5 lines>...
+    )
+AttributeError: Manager isn't available; 'auth.User' has been swapped for 'users.User'
+
+======================================================================
+ERROR: test_download_unauthenticated (invoices.tests_download.InvoiceDownloadTests.test_download_unauthenticated)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\invoices\tests_download.py", line 18, in setUp
+    self.user = User.objects.create_user(username='testuser', password='password')
+                ^^^^^^^^^^^^
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\venv\Lib\site-packages\django\db\models\manager.py", line 196, in __get__
+    raise AttributeError(
+    ...<5 lines>...
+    )
+AttributeError: Manager isn't available; 'auth.User' has been swapped for 'users.User'
+
+======================================================================
+ERROR: test_confirmation_creates_report (invoices.tests_workflow.InboxWorkflowTests.test_confirmation_creates_report)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\invoices\tests_workflow.py", line 11, in setUp
+    self.user = User.objects.create_user(username='reviewer', password='password')
+                ^^^^^^^^^^^^
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\venv\Lib\site-packages\django\db\models\manager.py", line 196, in __get__
+    raise AttributeError(
+    ...<5 lines>...
+    )
+AttributeError: Manager isn't available; 'auth.User' has been swapped for 'users.User'
+
+======================================================================
+ERROR: test_confirmation_with_changes_penalizes_score (invoices.tests_workflow.InboxWorkflowTests.test_confirmation_with_changes_penalizes_score)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\invoices\tests_workflow.py", line 11, in setUp
+    self.user = User.objects.create_user(username='reviewer', password='password')
+                ^^^^^^^^^^^^
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\venv\Lib\site-packages\django\db\models\manager.py", line 196, in __get__
+    raise AttributeError(
+    ...<5 lines>...
+    )
+AttributeError: Manager isn't available; 'auth.User' has been swapped for 'users.User'
+
+======================================================================
+FAIL: test_duplicate_avoidance (invoices.tests.InvoiceImportTests.test_duplicate_avoidance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\leonardo.yuki\AppData\Local\Python\pythoncore-3.14-64\Lib\unittest\mock.py", line 1432, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\invoices\tests.py", line 75, in test_duplicate_avoidance
+    self.assertEqual(status, "SKIPPED", msg)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: InvoiceImport.Status.PENDING_REVIEW != 'SKIPPED' : Fatura requer revisão.
+
+======================================================================
+FAIL: test_reprocess_canceled_report (invoices.tests_parser_logic.ImportReprocessTests.test_reprocess_canceled_report)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\leonardo.yuki\AppData\Local\Python\pythoncore-3.14-64\Lib\unittest\mock.py", line 1432, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\invoices\tests_parser_logic.py", line 76, in test_reprocess_canceled_report
+    self.assertEqual(status2, 'SUCCESS')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'FAILED' != 'SUCCESS'
+- FAILED
++ SUCCESS
+
+
+======================================================================
+FAIL: test_reprocess_deleted_report (invoices.tests_parser_logic.ImportReprocessTests.test_reprocess_deleted_report)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\leonardo.yuki\AppData\Local\Python\pythoncore-3.14-64\Lib\unittest\mock.py", line 1432, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\invoices\tests_parser_logic.py", line 50, in test_reprocess_deleted_report
+    self.assertEqual(status2, 'SUCCESS')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'FAILED' != 'SUCCESS'
+- FAILED
++ SUCCESS
+
+
+======================================================================
+FAIL: test_reprocess_updates_data (invoices.tests_parser_logic.ImportReprocessTests.test_reprocess_updates_data)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\leonardo.yuki\AppData\Local\Python\pythoncore-3.14-64\Lib\unittest\mock.py", line 1432, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\invoices\tests_parser_logic.py", line 114, in test_reprocess_updates_data
+    self.assertEqual(status2, 'SUCCESS')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'FAILED' != 'SUCCESS'
+- FAILED
++ SUCCESS
+
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.118s
+
+FAILED (failures=4, errors=6)
+Destroying test database for alias 'default'...
+Found 23 test(s).
+System check identified no issues (0 silenced).
+Erro pdfplumber: '>' not supported between instances of 'MagicMock' and 'int'
+Erro no OCR: Unable to get page count. Is poppler installed and in PATH?
+Erro pdfplumber: '>' not supported between instances of 'MagicMock' and 'int'
+Erro no OCR: Unable to get page count. Is poppler installed and in PATH?
+[VivoParser] Fallback específico para fatura fixa ativado. Texto detectado: Total a pagar R$ 100,00 Vencimento 10/10/2025...
+[VivoParser] Fallback específico para fatura fixa ativado. Texto detectado: Total a pagar R$ 100,00 Vencimento 10/10/2025...
+[VivoParser] Fallback específico para fatura fixa ativado. Texto detectado: Total a pagar R$ 100,00 Vencimento 10/10/2025...
+Traceback (most recent call last):
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\invoices\services\importer.py", line 135, in process_invoice
+    before_state = model_to_dict(existing_import)
+                   ^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'model_to_dict' where it is not associated with a value
+
+[VivoParser] Fallback específico para fatura fixa ativado. Texto detectado: Total a pagar R$ 100,00 Vencimento 10/10/2025...
+[VivoParser] Fallback específico para fatura fixa ativado. Texto detectado: Total a pagar R$ 100,00 Vencimento 10/10/2025...
+Traceback (most recent call last):
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\invoices\services\importer.py", line 135, in process_invoice
+    before_state = model_to_dict(existing_import)
+                   ^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'model_to_dict' where it is not associated with a value
+
+[VivoParser] Fallback específico para fatura fixa ativado. Texto detectado: Fatura sem dados...
+[VivoParser] Fallback específico para fatura fixa ativado. Texto detectado: Total a pagar R$ 500,00 Vencimento 10/10/2026...
+Traceback (most recent call last):
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\Área de Trabalho\Teste\backend\invoices\services\importer.py", line 135, in process_invoice
+    before_state = model_to_dict(existing_import)
+                   ^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'model_to_dict' where it is not associated with a value
+
+[VivoParser] Fallback específico para fatura fixa ativado. Texto detectado: 
+        VIVO
+        Resumo da sua fatura
+       ...
+[VivoParser] Fallback específico para fatura fixa ativado. Texto detectado: 
+        VIVO EMPRESAS
+        impressão Página 1 ...
+[VivoParser] Fallback específico para fatura fixa ativado. Texto detectado: 
+        VIVO EMPRESAS
+        Resumo
+        Valo...
+[VivoParser] Fallback específico para fatura fixa ativado. Texto detectado: 
+        CONTA VIVO
+        Total a pagar R$ 350,0...
+[VivoParser] Fallback específico para fatura fixa ativado. Texto detectado: 
+        VIVO EMPRESAS
+        TOTAL GERAL A PAGAR...
+[VivoParser] Fallback específico para fatura fixa ativado. Texto detectado: 
+        VIVO EMPRESAS
+        MATRA MAQUINAS E TR...

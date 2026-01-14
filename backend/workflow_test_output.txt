@@ -1,0 +1,35 @@
+Creating test database for alias 'default'...
+EE
+======================================================================
+ERROR: test_confirmation_creates_report (invoices.tests_workflow.InboxWorkflowTests.test_confirmation_creates_report)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\햞ea de Trabalho\Teste\backend\invoices\tests_workflow.py", line 11, in setUp
+    self.user = User.objects.create_user(username='reviewer', password='password')
+                ^^^^^^^^^^^^
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\햞ea de Trabalho\Teste\backend\venv\Lib\site-packages\django\db\models\manager.py", line 196, in __get__
+    raise AttributeError(
+    ...<5 lines>...
+    )
+AttributeError: Manager isn't available; 'auth.User' has been swapped for 'users.User'
+
+======================================================================
+ERROR: test_confirmation_with_changes_penalizes_score (invoices.tests_workflow.InboxWorkflowTests.test_confirmation_with_changes_penalizes_score)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\햞ea de Trabalho\Teste\backend\invoices\tests_workflow.py", line 11, in setUp
+    self.user = User.objects.create_user(username='reviewer', password='password')
+                ^^^^^^^^^^^^
+  File "C:\Users\leonardo.yuki\OneDrive - Matra Tratores\햞ea de Trabalho\Teste\backend\venv\Lib\site-packages\django\db\models\manager.py", line 196, in __get__
+    raise AttributeError(
+    ...<5 lines>...
+    )
+AttributeError: Manager isn't available; 'auth.User' has been swapped for 'users.User'
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.003s
+
+FAILED (errors=2)
+Destroying test database for alias 'default'...
+Found 2 test(s).
+System check identified no issues (0 silenced).
