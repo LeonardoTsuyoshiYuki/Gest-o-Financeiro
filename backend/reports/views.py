@@ -263,3 +263,77 @@ class DashboardCarrierView(views.APIView):
             })
             
         return Response(data)
+
+class DashboardInsightsView(views.APIView):
+    """
+    KPIs Executivos e Insights Automáticos.
+    """
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request):
+        from datetime import date, timedelta
+        from django.utils import timezone
+        from invoices.models import InvoiceImport
+        
+        today = date.today()
+        first_this_month = today.replace(day=1)
+        next_month = (first_this_month + timedelta(days=32)).replace(day=1)
+        last_month_end = first_this_month - timedelta(days=1)
+        first_last_month = last_month_end.replace(day=1)
+        
+        # 1. Financeiro (Report)
+        # Considera APPROVED e PENDING como "Volume Faturado"
+        reports_qs = Report.objects.exclude(status__in=[Report.Status.CANCELED, Report.Status.FAILED])
+        
+        current_data = reports_qs.filter(
+            reference_date__gte=first_this_month,
+            reference_date__lt=next_month
+        ).aggregate(total=Sum('total_value'), count=Count('id'))
+        
+        last_data = reports_qs.filter(
+            reference_date__gte=first_last_month,
+            reference_date__lt=first_this_month
+        ).aggregate(total=Sum('total_value'))
+        
+        current_total = float(current_data['total'] or 0)
+        last_total = float(last_data['total'] or 0)
+        
+        # Variation
+        variation = 0.0
+        if last_total > 0:
+            variation = ((current_total - last_total) / last_total) * 100.0
+        elif current_total > 0:
+            variation = 100.0 # From 0 to something
+            
+        # 2. Operacional (Invoices) - Mês Atual
+        # InvoiceImport usa created_at (DateTime)
+        invoices_qs = InvoiceImport.objects.filter(
+            created_at__gte=timezone.make_aware(timezone.datetime.combine(first_this_month, timezone.datetime.min.time())),
+            created_at__lt=timezone.make_aware(timezone.datetime.combine(next_month, timezone.datetime.min.time()))
+        )
+        
+        errors_count = invoices_qs.filter(status=InvoiceImport.Status.FAILED).count()
+        skipped_count = invoices_qs.filter(status=InvoiceImport.Status.SKIPPED).count()
+        
+        # 3. Insights Generation
+        insights = []
+        if variation > 10:
+            insights.append(f"Aumento de {variation:.1f}% em relação ao mês anterior.")
+        elif variation < -10:
+            insights.append(f"Redução de {abs(variation):.1f}% em relação ao mês anterior.")
+            
+        if errors_count > 0:
+            insights.append(f"{errors_count} faturas com erro de importação exigem atenção.")
+            
+        if skipped_count > 0:
+            insights.append(f"{skipped_count} faturas duplicadas foram ignoradas.")
+
+        return Response({
+            'current_month_total': current_total,
+            'last_month_total': last_total,
+            'variation_percent': round(variation, 1),
+            'import_errors_count': errors_count,
+            'skipped_count': skipped_count,
+            'report_count': current_data['count'],
+            'insights_list': insights
+        })

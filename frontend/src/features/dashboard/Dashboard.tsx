@@ -3,25 +3,29 @@ import { Box, Typography, Button, Stack, CircularProgress } from '@mui/material'
 import { Refresh } from '@mui/icons-material';
 import DashboardStats from './components/DashboardStats';
 import DashboardCharts from './components/DashboardCharts';
-import { fetchStatusSummary, fetchTimelineData, fetchCarrierSummary, StatusSummary, TimelineData, CarrierSummary } from './dashboardService';
+import { fetchStatusSummary, fetchTimelineData, fetchCarrierSummary, fetchInsights, StatusSummary, TimelineData, CarrierSummary, DashboardInsights } from './dashboardService';
+import ExecutiveKPIs from './components/ExecutiveKPIs';
 
 const Dashboard: React.FC = () => {
     const [summary, setSummary] = useState<StatusSummary | null>(null);
     const [timeline, setTimeline] = useState<TimelineData[]>([]);
     const [carriers, setCarriers] = useState<CarrierSummary[]>([]);
+    const [insights, setInsights] = useState<DashboardInsights | null>(null);
     const [loading, setLoading] = useState(true);
 
     const loadData = async () => {
         setLoading(true);
         try {
-            const [sumData, timeData, carrData] = await Promise.all([
+            const [sumData, timeData, carrData, insightData] = await Promise.all([
                 fetchStatusSummary(),
                 fetchTimelineData(),
-                fetchCarrierSummary()
+                fetchCarrierSummary(),
+                fetchInsights()
             ]);
             setSummary(sumData);
             setTimeline(timeData);
             setCarriers(carrData);
+            setInsights(insightData);
         } catch (error) {
             console.error("Erro ao carregar dados do dashboard", error);
         } finally {
@@ -37,7 +41,7 @@ const Dashboard: React.FC = () => {
         <Box>
             <Stack direction="row" justifyContent="space-between" alignItems="center" mb={4}>
                 <Typography variant="h4" fontWeight="bold">
-                    Dashboard Gerencial
+                    Painel Executivo
                 </Typography>
                 <Button
                     variant="outlined"
@@ -55,6 +59,10 @@ const Dashboard: React.FC = () => {
             ) : (
                 <>
                     <Box mb={4}>
+                        <ExecutiveKPIs data={insights} loading={loading} />
+                    </Box>
+                    <Box mb={4}>
+                        <Typography variant="h5" fontWeight="bold" mb={2}>Visão Operacional</Typography>
                         <DashboardStats summary={summary} loading={loading} />
                     </Box>
                     <Box>

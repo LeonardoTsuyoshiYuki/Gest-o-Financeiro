@@ -22,6 +22,16 @@ export interface CarrierSummary {
     total: number;
 }
 
+export interface DashboardInsights {
+    current_month_total: number;
+    last_month_total: number;
+    variation_percent: number;
+    import_errors_count: number;
+    skipped_count: number;
+    report_count: number;
+    insights_list: string[];
+}
+
 export const fetchStatusSummary = async (): Promise<StatusSummary> => {
     const response = await api.get('/dashboard/status-summary/');
     return response.data;
@@ -34,5 +44,10 @@ export const fetchTimelineData = async (): Promise<TimelineData[]> => {
 
 export const fetchCarrierSummary = async (): Promise<CarrierSummary[]> => {
     const response = await api.get('/dashboard/carrier-summary/');
+    return response.data;
+};
+
+export const fetchInsights = async (): Promise<DashboardInsights> => {
+    const response = await api.get('/dashboard/insights/');
     return response.data;
 };
